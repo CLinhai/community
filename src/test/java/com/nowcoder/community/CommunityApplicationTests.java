@@ -67,4 +67,10 @@ class CommunityApplicationTests implements ApplicationContextAware {
 		System.out.println(testConfig);
 	}
 
+	@Test
+	public void substringTest(){
+		String url = "1232134fjsjfl.png";
+		String s = url.substring(url.lastIndexOf("."));
+		System.out.println(s);
+	}
 }
