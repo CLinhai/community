@@ -7,9 +7,12 @@ import com.nowcoder.community.entity.DiscussPost;
 import com.nowcoder.community.entity.LoginTicket;
 import com.nowcoder.community.entity.User;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
+
 
 import java.util.Date;
 import java.util.List;
@@ -17,6 +20,7 @@ import java.util.List;
 /**
  * Created by lh on 2022/8/9
  */
+@RunWith(SpringRunner.class)
 @SpringBootTest
 @ContextConfiguration(classes = CommunityApplication.class)
 public class MapperTests {
@@ -97,5 +101,20 @@ public class MapperTests {
     public void testUpdateTicketStatus(){
         int i = loginTicketMapper.updateStatus("abc", 1);
         System.out.println(i);
+    }
+
+    @Test
+    public void testInsertDiscussPost(){
+        DiscussPost post = new DiscussPost();
+        post.setUserId(281);
+        post.setTitle("测试");
+        post.setContent("测试插入");
+        post.setType(0);
+        post.setStatus(0);
+        post.setCreateTime(new Date());
+        post.setCommentCount(10);
+        post.setScore(80.0);
+        int num = discussPostMapper.insertDiscussPost(post);
+        System.out.println(num);
     }
 }
