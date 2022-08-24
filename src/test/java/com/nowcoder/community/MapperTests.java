@@ -76,7 +76,7 @@ public class MapperTests {
 
     @Test
     public void testSelectPosts() {
-        List<DiscussPost> discussPosts = discussPostMapper.selectDiscussPosts(149, 0, 10);
+        List<DiscussPost> discussPosts = discussPostMapper.selectDiscussPosts(149, 0, 10, 0);
         for (DiscussPost discussPost : discussPosts) {
             System.out.println(discussPost);
         }
@@ -96,19 +96,19 @@ public class MapperTests {
     }
 
     @Test
-    public void testSelectByTicket(){
+    public void testSelectByTicket() {
         LoginTicket loginTicket = loginTicketMapper.selectByTicket("abc");
         System.out.println(loginTicket);
     }
 
     @Test
-    public void testUpdateTicketStatus(){
+    public void testUpdateTicketStatus() {
         int i = loginTicketMapper.updateStatus("abc", 1);
         System.out.println(i);
     }
 
     @Test
-    public void testInsertDiscussPost(){
+    public void testInsertDiscussPost() {
         DiscussPost post = new DiscussPost();
         post.setUserId(149);
         post.setTitle("测试");
