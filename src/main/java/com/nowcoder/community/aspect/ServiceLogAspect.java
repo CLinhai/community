@@ -17,8 +17,8 @@ import java.util.Date;
 /**
  * Created by lh on 2022/8/15
  */
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class ServiceLogAspect {
     private static final Logger logger = LoggerFactory.getLogger(ServiceLogAspect.class);
 
